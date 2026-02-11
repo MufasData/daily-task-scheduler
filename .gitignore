@@ -4,3 +4,6 @@ terraform/*.tfstate
 terraform/*.tfstate.*
 crash.log
 crash.*.log
+
+#Tests
+test-file.json
