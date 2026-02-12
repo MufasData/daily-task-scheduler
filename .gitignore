@@ -7,6 +7,3 @@ crash.*.log
 
 # Tests
 test-file.json
-
-# Diagrams
-AWS_*
