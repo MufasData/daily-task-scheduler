@@ -1,14 +1,16 @@
-### AWS Project: Serverless Task Notifier
+# AWS Project: Serverless Task Notifier
 
-# Overview
+## Phase 1
 
-This is an automated, event-driven task notification system built on AWS. It started as a no-code concept to be done using PartyRock through just prompts, but I decided to level it up into a more practical and professional cloud solution using Terraform for infrastructure provisioning and Python (Boto3) for the backend logic. The system ensures that weekly task lists are processed and delivered to the user's inbox every Monday morning or upon manual file uploads to S3.
+### Overview
 
-# Architecture Diagram
+This is Phase 1 an automated, event-driven task notification system built on AWS. It started as a no-code concept to be done using PartyRock through just prompts, but I decided to level it up into a more practical and professional cloud solution using Terraform for infrastructure provisioning and Python (Boto3) for the backend logic. The system ensures that weekly task lists are processed and delivered to the user's inbox every Monday morning or upon manual file uploads to S3.
+
+### Architecture Diagram
 
 ![Project Architecture](./AWS_Cloud_Project_1.png)
 
-# Challenges Faced
+### Challenges Faced
 
 1) Solving the "Raw Data" Loop: Initially, the system sent raw S3 JSON directly to the user. I solved this by implementing a Python Lambda function to act as a translator. To prevent a recursive loop, I decoupled the architecture into two SNS topics: one for raw input and one for formatted output going to the email.
 
@@ -18,10 +20,10 @@ This is an automated, event-driven task notification system built on AWS. It sta
 
 4) (Minor) Lambda Deployment Debugging: Faced an ImportModuleError during deployment due to incorrect file zipping and missing dependencies. I resolved this by refining the Terraform archive_file logic and ensuring the boto3 client was correctly initialized within the Lambda handler.
 
-# What's next
+### What's next
 
 What's been completed so far is Phase 1... Phase 2 is upcoming, and this comprises of an update such that I can have notes on my phone where I add tasks which securely upload directly to the S3 file, which then gets sent to the weekly task notifier.
 
-# Phase 2
+## Phase 2
 
 ...
